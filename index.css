@@ -66,6 +66,9 @@ a {color: purple;}
            }
            body { 
             animation: bg-color 2s ease-in-out infinite; 
+            background-image: url(background.jpg);
+      
+       background-size: 100%;
           } 
           
           @keyframes bg-color { 
