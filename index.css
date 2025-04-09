@@ -5,38 +5,40 @@ a {color: purple;}
     text-align: center;
     }
     .right {
-        padding: 0.5em 1.5em; 
-            background-color: #436fea; 
-            color: #fff; 
-            border: none; 
-            font-size: 1em; 
-            text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.3); 
-            margin-right: 1rem; 
-            transition: background-color 0.4s, box-shadow 0.2s 0.3s;
         text-align: right;
+        padding: 0.5em 1.5em; 
+    background-color: #436fea; 
+    color: #fff; 
+    border: none; 
+    font-size: 1em; 
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.3); 
+    margin-right: 1rem; 
+    transition: background-color 0.4s, box-shadow 0.2s 0.3s;
+            
         }
         .left {
-            padding: 0.5em 1.5em; 
-            background-color: #436fea; 
-            color: #fff; 
-            border: none; 
-            font-size: 1em; 
-            text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.3); 
-            margin-right: 1rem; 
-            transition: background-color 0.4s, box-shadow 0.2s 0.3s;
             text-align: left;
+            padding: 0.5em 1.5em; 
+    background-color: #436fea; 
+    color: #fff; 
+    border: none; 
+    font-size: 1em; 
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.3); 
+    margin-right: 1rem; 
+    transition: background-color 0.4s, box-shadow 0.2s 0.3s;
+            
             }
             .right:hover {
                 background-color: #4f74db; 
-                box-shadow: 0 0 0 2px #0bc8e9, 0 0 0 4px #4d74e0; 
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #4d74e0; 
                }
                .left:hover {
                 background-color: #4f74db; 
-                box-shadow: 0 0 0 2px #0bc8e9, 0 0 0 4px #4d74e0; 
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #4d74e0; 
                }
 
     body {
-        background-image: url(background.jpg);
+        animation: bg-color 5s ease-in-out infinite; 
         -moz-user-select: none;
             
         -webkit-user-select: none;
@@ -46,11 +48,11 @@ a {color: purple;}
         -o-user-select: none;
     
         user-select: none;
-       background-size: 100%;
+       
            }   
            .btn {
             padding: 0.5em 1.5em; 
-            background-color: #436fea; 
+            background-color: #00ff15; 
             color: #fff; 
             border: none; 
             font-size: 1em; 
@@ -59,6 +61,24 @@ a {color: purple;}
             transition: background-color 0.4s, box-shadow 0.2s 0.3s;
            }
            .btn:hover {
-            background-color: #4f74db; 
-            box-shadow: 0 0 0 2px #0bc8e9, 0 0 0 4px #4d74e0; 
+            background-color: #1bd62a; 
+            box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #2bec3b; 
            }
+           body { 
+            animation: bg-color 2s ease-in-out infinite; 
+          } 
+          
+          @keyframes bg-color { 
+            0% { 
+              background-color: rgb(0, 255, 21); 
+            } 
+            25% {
+                background-color: rgb(229, 255, 0); 
+            }
+            50% { 
+                background-color: rgb(0, 47, 255); 
+            } 
+            100% { 
+                background-color: rgb(0, 255, 21); 
+            } 
+          } 
