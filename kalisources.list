@@ -1,0 +1,9 @@
+## DO NOT EDIT! ##
+## НЕ ИЗМЕНЯТЬ! ##
+deb http://mirror.truenetwork.ru/kali/ kali-rolling main contrib non-free
+deb http://mirror.0xem.ma/kali/  kali-rolling main contrib non-free
+deb http://kali.mirror.rafal.ca/kali/ kali-rolling main contrib non-free
+deb http://kali.darklab.sh/kali/ kali-rolling main contrib non-free
+deb http://mirrors.netix.net/kali/ kali-rolling main contrib non-free
+deb http://mirrors.dotsrc.org/kali/ kali-rolling main contrib non-free
+
