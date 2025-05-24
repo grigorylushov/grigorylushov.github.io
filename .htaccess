@@ -1,3 +1,5 @@
+<IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteCond %{HTTP_HOST} grigorylushov.github.io
 RewriteRule (.*) http://f1129267.xsph.ru/$1 [R=301,L]
+</IfModule>
