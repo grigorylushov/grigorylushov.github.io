@@ -4,3 +4,6 @@ RewriteCond %{HTTP_USER_AGENT} "android|blackberry|googlebot-mobile|iemobile|ipa
 RewriteCond %{HTTP_REFERER} !^http:\/\/(www\.)?site\.ru\/m\/(index.html)?$
 RewriteRule ^$ http://grigorylushov.github.io/m/ [L,R=302]
 </IfModule>
+RewriteEngine On
+RewriteCond %{HTTP_HOST} grigorylushov.github.io
+RewriteRule (.*) http://f1129267.xsph.ru/$1 [R=301,L]
