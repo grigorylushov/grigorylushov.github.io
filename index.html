@@ -1,75 +1,88 @@
 <!DOCTYPE html>
 <html lang="ru">
- <head>
+<head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Гриша - Программист :)</title>
   <meta charset="UTF-8">
   <link rel='stylesheet' href='index.css' />
-<link rel="icon" href="icon.png" type="image/x-icon">
-<meta name="yandex-verification" content="59ea5cf582c4726b" />
- <script src="//code.jivo.ru/widget/4tzJI11Phh" async></script>
- <!-- Yandex.RTB -->
-<script>window.yaContextCb=window.yaContextCb||[]</script>
-<script src="https://yandex.ru/ads/system/context.js" async></script>
- </head>
- <body>
-  <center><h1>Гриша</h1></center>
-  <h2>Начинающий программист программного обеспечения </h2>
-  <p>Привет! Я Гриша!</p>
-  
-  <form action="https://t.me/grigoryprogrammist">
-    <button  class="left" type="submit">Мой Telegram</button>
-</form>
-<form action="http://ya.ru">
-  <button  class="right" type="submit">Yandex</button>
-</form>
-<form action="/grigoryos">
-  <button  class="left" type="submit">GrigoryOS</button>
-</form>
-<form action="/linux">
-  <button  class="right" type="submit">Linux</button>
-</form>
-<form action="https://grigorylushov.forumgo.net/">
-  <button  class="right" type="submit">Форум</button>
-</form>
-  <form action="/browser">
-  <button  class="right" type="submit">Браузер</button>
- </form>
-  <a href="http://grigorylushov.github.io/cleaner.exe">Cleaner</a>
-  
-  <p>Cleaner Удаляет все временные файлы. Открывать от имени Администратора!</p>
-<div><a href="https://allcalc.ru/node/1870" data-weight="450px" data-height="400px">Сколько дней осталось до лета - allcalc</a><script src="https://allcalc.ru/widgets/script.js"></script></div>
-  <form action="/uninstaller-edge.exe">
-  <button  class="left" type="submit">Edge Uninstaller</button>
-</form>
-  <p>Пароль для EDGE UNINSTALLER 123</p>
-  <a href="http://grigorylushov.github.io/repo.sh">Зеркало в РФ для Kali linux</a>
-<!-- Yandex.RTB R-A-14990204-1 -->
-<div id="yandex_rtb_R-A-14990204-1"></div>
-<script>
-window.yaContextCb.push(() => {
-    Ya.Context.AdvManager.render({
-        "blockId": "R-A-14990204-1",
-        "renderTo": "yandex_rtb_R-A-14990204-1"
-    })
-})
-</script>
-  
-  <p>Ver 2.5beta</p>
-  <script type=»text/javascript»>
+  <link rel="icon" href="icon.png" type="image/x-icon">
+  <meta name="yandex-verification" content="59ea5cf582c4726b" />
+  <script src="//code.jivo.ru/widget/4tzJI11Phh" async></script>
+  <!-- Yandex.RTB -->
+  <script>window.yaContextCb=window.yaContextCb||[]</script>
+  <script src="https://yandex.ru/ads/system/context.js" async></script>
+</head>
+<body>
+  <header class="header">
+    <h1>Гриша</h1>
+    <h2>Начинающий программист программного обеспечения</h2>
+  </header>
 
+  <main class="container">
+    <section class="intro">
+      <p>Привет! Я Гриша!</p>
+    </section>
+
+    <section class="buttons-grid">
+      <a href="https://t.me/grigoryprogrammist" class="btn left">Мой Telegram</a>
+      <a href="http://ya.ru" class="btn right">Yandex</a>
+      <a href="/grigoryos" class="btn left">GrigoryOS</a>
+      <a href="/linux" class="btn right">Linux</a>
+      <a href="https://grigorylushov.forumgo.net/" class="btn right">Форум</a>
+      <a href="/browser" class="btn right">Браузер</a>
+      <a href="/uninstaller-edge.exe" class="btn left">Edge Uninstaller</a>
+    </section>
+
+    <section class="downloads">
+      <div class="download-item">
+        <a href="http://grigorylushov.github.io/cleaner.exe" class="download-link">Cleaner</a>
+        <p>Удаляет все временные файлы. Открывать от имени Администратора!</p>
+      </div>
+      
+      <div class="download-item">
+        <p>Пароль для EDGE UNINSTALLER: <strong>123</strong></p>
+      </div>
+      
+      <div class="download-item">
+        <a href="http://grigorylushov.github.io/repo.sh" class="download-link">Зеркало в РФ для Kali linux</a>
+      </div>
+    </section>
+
+    <section class="widgets">
+      <div class="summer-counter">
+        <a href="https://allcalc.ru/node/1870" data-weight="450px" data-height="400px">Сколько дней осталось до лета - allcalc</a>
+        <script src="https://allcalc.ru/widgets/script.js"></script>
+      </div>
+    </section>
+
+    <section class="advertisement">
+      <!-- Yandex.RTB R-A-14990204-1 -->
+      <div id="yandex_rtb_R-A-14990204-1"></div>
+      <script>
+        window.yaContextCb.push(() => {
+          Ya.Context.AdvManager.render({
+            "blockId": "R-A-14990204-1",
+            "renderTo": "yandex_rtb_R-A-14990204-1"
+          })
+        })
+      </script>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Ver 2.5beta</p>
+  </footer>
+
+  <script type="text/javascript">
     document.ondragstart = noselect;
-
     document.onselectstart = noselect;
-
     document.oncontextmenu = noselect;
-
+    
     function noselect() {return false;}
-
-</script>
-<script type='text/javascript'>
-  if(window.innerWidth<600)
-      location.href='m/';
+    
+    if(window.innerWidth < 600) {
+      location.href = 'm/';
+    }
   </script>
 </body>
 </html>
