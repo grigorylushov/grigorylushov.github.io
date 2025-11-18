@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows 10 Grigory Edition</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #0078d7;
+            --primary-dark: #106ebe;
+            --dark: #1e1e1e;
+            --darker: #121212;
+            --light: #f3f3f3;
+            --gray: #505050;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+            color: var(--light);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            font-size: 32px;
+            color: var(--primary);
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .logo-text span {
+            color: var(--primary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="none"><rect fill="%23121212" width="1200" height="800"/><path fill="%231e1e1e" d="M0,320L1200,480L1200,800L0,800Z"/></svg>') no-repeat center bottom;
+            background-size: cover;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--primary) 0%, #5fc3ff 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #cccccc;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            margin-left: 15px;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(0, 120, 215, 0.1);
+        }
+
+        .features {
+            padding: 100px 0;
+            background-color: var(--darker);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 36px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 30px;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: #aaaaaa;
+        }
+
+        .download-section {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .download-options {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .download-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 40px 30px;
+            position: relative;
+            overflow: hidden;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .download-card {
+            border: 2px solid var(--primary);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            font-size: 14px;
+            border-bottom-left-radius: 8px;
+        }
+
+        .download-card h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .download-card .size {
+            font-size: 18px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .specs {
+            text-align: left;
+            margin: 25px 0;
+        }
+
+        .specs li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .specs li:before {
+            content: "✓";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: #aaaaaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            padding-top: 20px;
+            border-top: 1px solid var(--gray);
+            color: #777;
+            font-size: 14px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: var(--dark);
+            padding: 40px;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .modal h2 {
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .modal p {
+            margin-bottom: 30px;
+            color: #cccccc;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #aaaaaa;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                gap: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .btn {
+                display: block;
+                margin: 10px auto;
+                width: 80%;
+            }
+            
+            .btn-secondary {
+                margin-left: 0;
+            }
+            
+            .download-options {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">⚡</div>
+                    <div class="logo-text">Windows 10 <span>Grigory Edition</span></div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#features">Особенности</a></li>
+                        <li><a href="#download">Скачать</a></li>
+                        <li><a href="#support">Поддержка</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Windows 10 Grigory Edition</h1>
+            <p>Максимально оптимизированная сборка Windows 10 для производительности, стабильности и удобства. Создана для тех, кто ценит скорость и контроль над системой.</p>
+            <a href="#download" class="btn">Скачать сейчас</a>
+            <a href="#features" class="btn btn-secondary">Узнать больше</a>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Ключевые особенности</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Максимальная производительность</h3>
+                    <p>Удалены ненужные компоненты, отключена телеметрия, оптимизированы службы для ускорения работы системы.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Уникальный дизайн</h3>
+                    <p>Эксклюзивные обои Grigory Edition, темная тема по умолчанию и кастомные иконки для визуального комфорта.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Улучшенная безопасность</h3>
+                    <p>Встроенные патчи безопасности, блокировка рекламы и телеметрии, оптимизированный Защитник Windows.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Глубокая настройка</h3>
+                    <p>Предустановлены утилиты для тонкой настройки системы, твики реестра и оптимизированные схемы электропитания.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Стабильность и совместимость</h3>
+                    <p>Сохранена полная совместимость с драйверами и приложениями, удалены только ненужные компоненты.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="download-section" id="download">
+        <div class="container">
+            <h2 class="section-title">Скачать Windows 10 Grigory Edition</h2>
+            <p>Performance Edition - оптимальная версия для игр и работы</p>
+            
+            <div class="download-options">
+                <div class="download-card">
+                    <div class="popular-badge">Рекомендуемая</div>
+                    <h3>Performance Edition</h3>
+                    <span class="size">~8 GB</span>
+                    <ul class="specs">
+                        <li>Все возможности Standard Edition</li>
+                        <li>Дополнительная оптимизация для игр</li>
+                        <li>Удалены ненужные службы</li>
+                        <li>Предустановлены DirectX и .NET</li>
+                        <li>Улучшенная схема электропитания</li>
+                        <li>Автотвики реестра</li>
+                        <li>Эксклюзивные обои Windows XP</li>
+                        <li>Темная тема по умолчанию</li>
+                    </ul>
+                    <button class="btn download-btn" data-version="Performance">Скачать сейчас</button>
+                </div>
+            </div>
+            
+            <div style="margin-top: 50px; color: #aaaaaa;">
+                <p><strong>Системные требования:</strong> Процессор 1 ГГц или выше, 2 ГБ ОЗУ (рекомендуется 4 ГБ), 16 ГБ свободного места на диске, DirectX 9</p>
+                <p style="margin-top: 15px;"><strong>Примечание:</strong> Данная сборка предназначена только для ознакомления и личного использования.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="support">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Windows 10 Grigory Edition</h3>
+                    <p>Оптимизированная сборка Windows 10 для максимальной производительности и удобства.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Ссылки</h3>
+                    <ul>
+                        <li><a href="#features">Особенности</a></li>
+                        <li><a href="#download">Скачать</a></li>
+                        <li><a href="#">Документация</a></li>
+                        <li><a href="#">Частые вопросы</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Поддержка</h3>
+                    <ul>
+                        <li><a href="https://t.me/windowsgrigoryedition" target="_blank">Telegram-канал</a></li>
+                        <li><a href="mailto:grigorylushov@gmail.com">Баги и предложения</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Правовая информация</h3>
+                    <ul>
+                        <li><a href="#">Лицензионное соглашение</a></li>
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                        <li><a href="#">Отказ от ответственности</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 Windows 10 Grigory Edition. Данный проект не связан с Microsoft Corporation. Windows является зарегистрированной торговой маркой Microsoft.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal" id="downloadModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Подтверждение загрузки</h2>
+            <p>Вы собираетесь скачать Windows 10 Grigory Edition Performance Edition.</p>
+            <p>Размер файла: <span id="fileSize">~8 GB</span></p>
+            <p>Пожалуйста, ознакомьтесь с лицензионным соглашением перед использованием.</p>
+            <div style="margin-top: 30px;">
+                <button class="btn" id="confirmDownload">Начать загрузку</button>
+                <button class="btn btn-secondary" id="cancelDownload">Отмена</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const downloadBtns = document.querySelectorAll('.download-btn');
+            const modal = document.getElementById('downloadModal');
+            const closeModal = document.querySelector('.close-modal');
+            const cancelDownload = document.getElementById('cancelDownload');
+            const confirmDownload = document.getElementById('confirmDownload');
+            const fileSize = document.getElementById('fileSize');
+            
+            downloadBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    fileSize.textContent = '~8 GB';
+                    modal.style.display = 'flex';
+                });
+            });
+            
+            closeModal.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+            
+            cancelDownload.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+            
+            confirmDownload.addEventListener('click', function() {
+                // Показываем alert
+                alert('Начинается загрузка Windows 10 Grigory Edition Performance Edition!\n\nФайл будет сохранен в папке "Загрузки".');
+                
+                // Здесь можно добавить реальную ссылку для скачивания
+                // window.open('https://ваш-сайт.com/downloads/windows10-grigory-performance.iso', '_blank');
+                
+                modal.style.display = 'none';
+            });
+            
+            // Закрытие модального окна при клике вне его
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
