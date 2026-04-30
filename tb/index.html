@@ -3,15 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Загрузка</title>
-    <meta http-equiv="refresh" content="5; url=https://grigorylushov.github.io/tb/1.2/happybirthday.apk">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .error {
+            color: red;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <center><h1>Please Wait! Downloading the latest version in Russian</h1></center>
-    
+    <h1>Please Wait! Downloading the latest version in Russian</h1>
+
     <script>
-        // Альтернативный вариант через JavaScript
+        // Функция проверки Android
+        function isAndroid() {
+            return /Android/i.test(navigator.userAgent);
+        }
+
         setTimeout(function() {
-            window.location.href = "https://grigorylushov.github.io/tb/1.2/happybirthday.apk";
+            if (isAndroid()) {
+                window.location.href = "https://grigorylushov.github.io/tb/1.2/happybirthday.apk";
+            } else {
+                document.body.innerHTML += '<div class="error"><strong>Error:</strong> This app is only available for Android devices.</div>';
+                document.title = "Not Supported";
+            }
         }, 5000);
     </script>
 </body>
