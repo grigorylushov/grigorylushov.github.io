@@ -1,0 +1,5 @@
+version=1.0
+apk_url=https://grigorylushov.github.io/tb/1.0/happybirthday.apk
+whatsnew=Первый релиз
+min_version=1.0
+force_update=false
